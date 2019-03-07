@@ -1,0 +1,30 @@
+from unittest import TestCase, main
+
+def eh_par(val) -> bool:
+	"""
+		funcao que verificar se um valor é par
+		
+		Arg1:
+			- val é um número inteiro
+ 	"""
+
+
+	try:
+		return True if val % 2 == 0 else False
+	except TypeError:
+		return False
+	
+help(eh_par)
+class Testes(TestCase):
+	def test_par(self):
+		self.assertEqual(eh_par(2),True,'é par')
+	
+	def test_impar(self):
+		self.assertEqual(eh_par(3), False,'não é par')
+	
+	def test_string(self):
+		self.assertEqual(eh_par('oi9'),False,'string')
+
+print ("\n\nInicio dos Teste:\n")
+if __name__ == '__main__':
+	main()
