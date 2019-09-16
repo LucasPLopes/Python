@@ -8,3 +8,10 @@ def worker(message):
 
 t = threading.Thread(target=worker, args=("Thread sendo executada",))
 t.start()
+
+while t.is_alive():
+    print ("Aguardando")
+    time.sleep(5)
+
+print ("Thread morreu")
+print ("Finished program")
